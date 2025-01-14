@@ -1,0 +1,70 @@
+.maincontianer {
+  position: relative;
+  width: 17rem;
+  height: 23rem;
+}
+.thecard {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: all 0.5s ease;
+}
+.thecard:hover {
+  transform: rotateY(180deg);
+}
+
+.thefront {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  background: #ffc720;
+  color: #333;
+  text-align: center;
+  border-radius: 20px;
+  font-size: 20;
+  font-weight: bold;
+
+  display: flex; /* Centering the image */
+  align-items: center; /* Centering vertically */
+  justify-content: center; /* Centering horizontally */
+  overflow: hidden;
+}
+.thefront img {
+  width: 100%; /* Make the image take the full width of the card */
+  height: 100%; /* Make the image take the full height of the card */
+  object-fit: cover; /* Ensure the image fits inside the card without distortion */
+  border-radius: 20px; /* Match the card's border radius */
+}
+.theback {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  background: linear-gradient(
+    to bottom right,
+    #c29240,
+    #634324,
+    #b17d22,
+    #56391c,
+    #e19e46
+  );
+
+  display: flex; /* Centering the image */
+  align-items: center; /* Centering vertically */
+  justify-content: center; /* Centering horizontally */
+  overflow: hidden;
+  text-align: center;
+  border-radius: 20px;
+  border: 0.3rem solid #201c17;
+  color: #ffff;
+  transform: rotateY(180deg);
+}
+
+.theback img {
+  width: 100%; /* Make the image take the full width of the card */
+  height: 106%; /* Make the image take the full height of the card */
+  object-fit: cover;
+  border-radius: 20px;
+}
