@@ -6,7 +6,7 @@ import spinningGold from "../assets/SpinningGold.svg";
 
 const Round1 = () => {
   return (
-    <div className=" bg-gradient-to-b from-black via-black to-green-950 min-h-screen p-[2rem] px-[4rem]">
+    <div className=" bg-gradient-to-b from-black via-black to-emerald-950  p-[2rem] px-[4rem]">
       <h1
         className="text-white pl-6  text-[3rem] font-bold mb-5 md:mb-5 "
         style={{ textShadow: "0 0 5px #fff, 0 0 3px #f39c12, 0 0 1px #f39c12" }}
@@ -23,29 +23,31 @@ const Round1 = () => {
         </div>
 
         {/* <div className="relative flex items-center justify-center "> */}
-        <div className="relative flex items-center justify-center animate-[spin_10s_linear_infinite] ">
-          {/* Outer Ring */}
-          <img
-            src={outerRing}
-            alt="Outer Ring"
-            className="w-[300px] sm:w-[400px] md:w-[500px] lg:w-[570px] "
-          />
+        <div className="relative flex items-center justify-center">
+  {/* Rotating Container */}
+  <div className="relative flex items-center justify-center animate-[spin_10s_linear_infinite]">
+    {/* Outer Ring */}
+    <img
+      src={outerRing}
+      alt="Outer Ring"
+      className="w-[300px] sm:w-[400px] md:w-[500px] lg:w-[570px]"
+    />
 
-          {/* Spinning Gold */}
-          <img
-            src={spinningGold}
-            alt="Spinning Gold"
-            // className="absolute w-[150px] sm:w-[200px] md:w-[250px] lg:w-[250px] animate-spin-slow"
-            className="absolute w-[150px] sm:w-[200px] md:w-[250px] lg:w-[270px] "
-          />
+    {/* Spinning Gold */}
+    <img
+      src={spinningGold}
+      alt="Spinning Gold"
+      className="absolute w-[150px] sm:w-[200px] md:w-[250px] lg:w-[270px]"
+    />
+  </div>
 
-          {/* Millionaire Text */}
-          <img
-            src={millionaire}
-            alt="Millionaire"
-            className="absolute w-[50rem] sm:w-[18rem] md:w-[200px] lg:w-[28rem]"
-          />
-        </div>
+  {/* Static Millionaire Text */}
+  <img
+    src={millionaire}
+    alt="Millionaire"
+    className="absolute w-[10rem] sm:w-[18rem] md:w-[200px] lg:w-[26rem]"
+  />
+</div>
       </div>
     </div>
   );

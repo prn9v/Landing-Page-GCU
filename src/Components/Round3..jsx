@@ -37,6 +37,7 @@ const IntroScreen = ({ onComplete }) => {
         flexDirection: "column",
         zIndex: 10,
         transition: "top 1s ease",
+        
       }}
     >
       <div
@@ -50,6 +51,7 @@ const IntroScreen = ({ onComplete }) => {
           display: "flex",
           justifyContent: "center",
           alignItems: "center",
+          // marginTop: "10rem",
         }}
       >
         <img
