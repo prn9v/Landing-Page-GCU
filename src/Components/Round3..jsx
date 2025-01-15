@@ -1,26 +1,15 @@
 import React, { useState, useEffect } from "react";
 
 const Round3 = () => {
-  const [light, setLight] = useState("green");
+  const [light, setLight] = useState("text-green-500");
   const [animation, setAnimation] = useState(true);
-  const [isSmallScreen, setIsSmallScreen] = useState(false);
-
-  useEffect(() => {
-    const handleResize = () => {
-      setIsSmallScreen(window.innerWidth <= 277);
-    };
-
-    // Initial check
-    handleResize();
-
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
 
   useEffect(() => {
     const intervalId = setInterval(() => {
       if (!animation) return;
-      setLight((prevLight) => (prevLight === "green" ? "red" : "green"));
+      setLight((prevLight) =>
+        prevLight === "text-green-500" ? "text-red-500" : "text-green-500"
+      );
     }, 3000);
 
     return () => clearInterval(intervalId);
@@ -28,105 +17,32 @@ const Round3 = () => {
 
   return (
     <div
+      className={`min-h-screen w-screen bg-black bg-cover bg-center bg-no-repeat flex flex-col justify-between items-center font-sans ${light} transition-colors duration-300`}
       style={{
-        width: "100vw",
-        height: "100vh",
-        backgroundImage: `url(/frontman.jpg)`,
-        backgroundSize: "cover",
-        backgroundRepeat: "no-repeat",
-        backgroundPosition: "center",
-        display: "flex",
-        flexDirection: "column",
-        justifyContent: "space-between",
-        alignItems: "center",
-        fontSize: isSmallScreen ? "1rem" : "1.5rem",
-        fontFamily: "Arial, sans-serif",
-        color: light,
-        position: "relative",
-        transition: "color 3s ease-in-out",
-        backgroundColor: "black",
-        overflow: isSmallScreen ? "auto" : "hidden", // ensure overflow here if content grows too large
+        backgroundImage: "url(/frontman.jpg)",
+        width: "100vw", // Ensures background width is exactly 100vw
+        overflowX: "hidden", // Prevents any horizontal overflow
       }}
     >
-      <div
-        className="logos-container"
-        style={{
-          overflow: "hidden",
-          marginTop: "-1.8rem",
-          marginBottom: "-3rem",
-        }}
-      >
-        <div
-          className="logos-slide"
-          style={{
-            display: "flex",
-            animation: "slide 35s infinite linear",
-          }}
-        >
-          {/* Icons can be rendered here */}
-        </div>
-      </div>
-      <h1
-        style={{
-          justifyContent: "left",
-          fontSize: isSmallScreen ? "1.5rem" : "3rem",
-          marginTop: isSmallScreen ? "0rem" : "-6rem",
-        }}
-      >
+      {/* Title */}
+      <h1 className="text-xl sm:text-3xl lg:text-5xl mt-4 px-4 w-full text-center">
         Red Light - Green Light
       </h1>
-      <div
-        style={{
-          display: "flex",
-          justifyContent: "space-between",
-          width: "80%",
-          flexDirection: isSmallScreen ? "column" : "row", // Updated ternary operator
-          position: "relative",
-          top: "15rem",
-        }}
-      >
-        <p
-          style={{
-            width: isSmallScreen ? "100%" : "30%", // Apply width based on screen size
-            margin: "1rem",
-          }}
-        >
-          Test your coding speed and focus in this thrilling competition!
-        </p>
-        <p
-          style={{
-            width: isSmallScreen ? "100%" : "30%", // Apply width based on screen size
-            margin: "1rem",
-          }}
-        >
-          Code furiously when the light is green, but freeze instantly when it
-          turns red.
-        </p>
-        <p
-          style={{
-            width: isSmallScreen ? "100%" : "30%", // Apply width based on screen size
-            margin: "1rem",
-          }}
-        >
-          Can you outsmart the clock and emerge victorious?
-        </p>
-      </div>
 
-      <div
-        className="logos-container"
-        style={{
-          overflow: "hidden",
-          marginBottom: "-1.8rem",
-        }}
-      >
-        <div
-          className="logos-slide"
-          style={{
-            display: "flex",
-            animation: "slide 35s infinite linear",
-          }}
-        >
-          {/* Icons can be rendered here */}
+      {/* Content Container: Flex with Centered and Positioned P Tags */}
+      <div className="flex-grow flex flex-col justify-end items-center gap-4 pb-8 w-full sm:w-4/5">
+        {/* Add padding between <p> and the title on small screens */}
+        <div className="flex flex-col sm:flex-row justify-between sm:justify-evenly items-center gap-4 w-full mt-8 sm:mt-0">
+          <p className="flex items-center justify-center w-40 h-40 sm:w-1/3 sm:h-56 text-center bg-gray-800 text-white rounded-md p-4 shadow-lg">
+            Test your coding speed and focus in this thrilling competition!
+          </p>
+          <p className="flex items-center justify-center w-40 h-40 sm:w-1/3 sm:h-56 text-center bg-gray-800 text-white rounded-md p-4 shadow-lg">
+            Code furiously when the light is green, but freeze instantly when it
+            turns red.
+          </p>
+          <p className="flex items-center justify-center w-40 h-40 sm:w-1/3 sm:h-56 text-center bg-gray-800 text-white rounded-md p-4 shadow-lg">
+            Can you outsmart the clock and emerge victorious?
+          </p>
         </div>
       </div>
     </div>
@@ -135,30 +51,24 @@ const Round3 = () => {
 
 const RedLightGreenLightApp = () => {
   return (
-    <>
+    <div
+      className="flex flex-col justify-start items-center bg-black min-h-screen overflow-x-hidden" // Added overflow-x-hidden
+    >
+      {/* Title Section: Centered */}
       <h1
-        className="text-white text-3xl sm:text-4xl lg:text-5xl mb-6 sm:mb-10 lg:mb-20 font-bold"
+        className="text-white text-3xl sm:text-4xl lg:text-5xl font-bold px-4 w-full pt-4 text-center"
         style={{
           textShadow: "0 0 5px #fff, 0 0 3px #f39c12, 0 0 1px #f39c12",
-          backgroundColor: "black",
-          marginBottom: "0",
-          paddingLeft: "1rem",
-          paddingTop: "1rem",
         }}
       >
-        Round 3 :{" "}
+        Round 3:
       </h1>
-      <div
-        style={{
-          width: "100vw",
-          height: "100vh",
-          overflow: "hidden",
-          position: "relative",
-        }}
-      >
+
+      {/* Round 3 Section */}
+      <div className="w-full flex-grow">
         <Round3 />
       </div>
-    </>
+    </div>
   );
 };
 
