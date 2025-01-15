@@ -6,9 +6,9 @@ import spinningGold from "../assets/SpinningGold.svg";
 
 const Round1 = () => {
   return (
-    <div className=" bg-gradient-to-b from-black via-black to-emerald-950  p-[2rem] px-[4rem]">
+    <div className=" bg-gradient-to-b  from-black via-black to-emerald-950  p-[2rem] px-[4rem]">
       <h1
-        className="text-white pl-6  text-[3rem] font-bold mb-5 md:mb-5 "
+        className="text-white text-3xl sm:text-4xl lg:text-5xl  pl-6   font-bold mb-5 md:mb-5 "
         style={{ textShadow: "0 0 5px #fff, 0 0 3px #f39c12, 0 0 1px #f39c12" }}
       >
         Round 1 :{" "}
@@ -30,14 +30,14 @@ const Round1 = () => {
     <img
       src={outerRing}
       alt="Outer Ring"
-      className="w-[300px] sm:w-[400px] md:w-[500px] lg:w-[570px]"
+      className="w-[550px] sm:w-[400px] md:w-[500px] lg:w-[570px]"
     />
 
     {/* Spinning Gold */}
     <img
       src={spinningGold}
       alt="Spinning Gold"
-      className="absolute w-[150px] sm:w-[200px] md:w-[250px] lg:w-[270px]"
+      className="absolute w-[6rem] sm:w-[200px] md:w-[250px] lg:w-[270px]"
     />
   </div>
 
@@ -45,7 +45,7 @@ const Round1 = () => {
   <img
     src={millionaire}
     alt="Millionaire"
-    className="absolute w-[10rem] sm:w-[18rem] md:w-[200px] lg:w-[26rem]"
+    className="absolute w-[9.5rem] sm:w-[18rem] md:w-[200px] lg:w-[26rem]"
   />
 </div>
       </div>
