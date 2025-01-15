@@ -1,102 +1,21 @@
 import React, { useState, useEffect } from "react";
 
-const IntroScreen = ({ onComplete }) => {
-  const [light, setLight] = useState("red");
-  const [slideUp, setSlideUp] = useState(false);
-
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setLight("green");
-      setTimeout(() => {
-        handleSkip();
-      }, 3000);
-    }, 4000);
-
-    return () => {
-      clearTimeout(timer);
-    };
-  }, []);
-
-  const handleSkip = () => {
-    setSlideUp(true);
-    setTimeout(onComplete, 2000);
-  };
-
-  return (
-    <div
-      style={{
-        width: "100vw",
-        height: "100vh",
-        backgroundColor: "black",
-        position: "absolute",
-        top: slideUp ? "-100%" : "0",
-        left: 0,
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-        flexDirection: "column",
-        zIndex: 10,
-        transition: "top 1s ease",
-        
-      }}
-    >
-      <div
-        style={{
-          height: "50%",
-          width: "95%",
-          overflow: "hidden",
-          position: "relative",
-          backgroundColor: light === "red" ? "#ff4d4d" : "#4caf50",
-          transition: "background-color 4s ease",
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-          // marginTop: "10rem",
-        }}
-      >
-        <img
-          src={light === "red" ? "/open-eyes-doll.jpg" : "/close-eyes-doll.jpg"}
-          alt={light === "red" ? "Open Eyes Doll" : "Closed Eyes Doll"}
-          style={{
-            width: "auto",
-            height: "100%",
-            objectFit: "contain",
-            position: "absolute",
-            right: -30,
-          }}
-        />
-        <h1
-          style={{
-            color: light === "red" ? "white" : "black",
-            fontSize: "5rem",
-            textAlign: light === "green" ? "left" : "center", // Align left for green light
-            transform: light === "green" ? "translateX(-10%)" : "none", // Move slightly left
-          }}
-        >
-          {light === "red" ? "Red Light: Stop!" : "Green Light: Go!"}
-        </h1>
-      </div>
-      <button
-        style={{
-          position: "absolute",
-          bottom: "20px",
-          backgroundColor: "transparent",
-          border: "1px solid white",
-          color: "white",
-          padding: "10px 20px",
-          borderRadius: "5px",
-        }}
-        onClick={handleSkip}
-      >
-        Skip Intro
-      </button>
-    </div>
-  );
-};
-
 const Round3 = () => {
   const [light, setLight] = useState("green");
   const [animation, setAnimation] = useState(true);
+  const [isSmallScreen, setIsSmallScreen] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsSmallScreen(window.innerWidth <= 277);
+    };
+
+    // Initial check
+    handleResize();
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   useEffect(() => {
     const intervalId = setInterval(() => {
@@ -114,15 +33,19 @@ const Round3 = () => {
         height: "100vh",
         backgroundImage: `url(/frontman.jpg)`,
         backgroundSize: "cover",
+        backgroundRepeat: "no-repeat",
+        backgroundPosition: "center",
         display: "flex",
         flexDirection: "column",
         justifyContent: "space-between",
         alignItems: "center",
-        fontSize: "2rem",
+        fontSize: isSmallScreen ? "1rem" : "1.5rem",
         fontFamily: "Arial, sans-serif",
         color: light,
         position: "relative",
         transition: "color 3s ease-in-out",
+        backgroundColor: "black",
+        overflow: isSmallScreen ? "auto" : "hidden", // ensure overflow here if content grows too large
       }}
     >
       <div
@@ -140,31 +63,51 @@ const Round3 = () => {
             animation: "slide 35s infinite linear",
           }}
         >
-          {/* {Array.from({ length: 20 }).map((_, index) => (
-            <img
-              key={index}
-              src="/icons.jpg"
-              alt="Game Icons"
-              style={{ width: "5.1rem", height: "5.1rem" }}
-            />
-          ))} */}
+          {/* Icons can be rendered here */}
         </div>
       </div>
-      <h1 style={{ justifyContent: "left" }}>Red Light - Green Light</h1>
+      <h1
+        style={{
+          justifyContent: "left",
+          fontSize: isSmallScreen ? "1.5rem" : "3rem",
+          marginTop: isSmallScreen ? "0rem" : "-6rem",
+        }}
+      >
+        Red Light - Green Light
+      </h1>
       <div
         style={{
           display: "flex",
           justifyContent: "space-between",
           width: "80%",
+          flexDirection: isSmallScreen ? "column" : "row", // Updated ternary operator
+          position: "relative",
+          top: "15rem",
         }}
       >
-        <p style={{ width: "30%" }}>
-          Test your coding speed and focus in this thrilling competition! <br />
-          <br />
+        <p
+          style={{
+            width: isSmallScreen ? "100%" : "30%", // Apply width based on screen size
+            margin: "1rem",
+          }}
+        >
+          Test your coding speed and focus in this thrilling competition!
+        </p>
+        <p
+          style={{
+            width: isSmallScreen ? "100%" : "30%", // Apply width based on screen size
+            margin: "1rem",
+          }}
+        >
           Code furiously when the light is green, but freeze instantly when it
           turns red.
         </p>
-        <p style={{ width: "30%" }}>
+        <p
+          style={{
+            width: isSmallScreen ? "100%" : "30%", // Apply width based on screen size
+            margin: "1rem",
+          }}
+        >
           Can you outsmart the clock and emerge victorious?
         </p>
       </div>
@@ -183,14 +126,7 @@ const Round3 = () => {
             animation: "slide 35s infinite linear",
           }}
         >
-          {/* {Array.from({ length: 20 }).map((_, index) => (
-            <img
-              key={index}
-              src="/icons.jpg"
-              alt="Game Icons"
-              style={{ width: "5.1rem", height: "5.1rem" }}
-            />
-          ))} */}
+          {/* Icons can be rendered here */}
         </div>
       </div>
     </div>
@@ -198,13 +134,17 @@ const Round3 = () => {
 };
 
 const RedLightGreenLightApp = () => {
-  const [introComplete, setIntroComplete] = useState(false);
-
   return (
     <>
       <h1
-        className=" bg-black text-white  text-[3rem] font-bold pl-24"
-        style={{ textShadow: "0 0 5px #fff, 0 0 3px #f39c12, 0 0 1px #f39c12" }}
+        className="text-white text-3xl sm:text-4xl lg:text-5xl mb-6 sm:mb-10 lg:mb-20 font-bold"
+        style={{
+          textShadow: "0 0 5px #fff, 0 0 3px #f39c12, 0 0 1px #f39c12",
+          backgroundColor: "black",
+          marginBottom: "0",
+          paddingLeft: "1rem",
+          paddingTop: "1rem",
+        }}
       >
         Round 3 :{" "}
       </h1>
@@ -216,10 +156,7 @@ const RedLightGreenLightApp = () => {
           position: "relative",
         }}
       >
-        {!introComplete && (
-          <IntroScreen onComplete={() => setIntroComplete(true)} />
-        )}
-        {introComplete && <Round3 />}
+        <Round3 />
       </div>
     </>
   );
