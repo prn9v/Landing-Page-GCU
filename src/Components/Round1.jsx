@@ -7,7 +7,7 @@ import spinningGold from "../assets/SpinningGold.svg";
 const Round1 = () => {
   return (
     <div className=" bg-gradient-to-b  from-black via-black to-teal-950  p-[2rem] px-[4rem]"> 
-    <div className="flex">
+    <div className="flex mt-[3rem]">
 
       <h1
         className="text-white text-3xl sm:text-4xl lg:text-5xl  pl-6   font-bold mb-5 md:mb-5 "
