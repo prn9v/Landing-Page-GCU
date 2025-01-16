@@ -82,17 +82,30 @@ const Round3 = () => {
 const RedLightGreenLightApp = () => {
   return (
     <div
-      className="flex flex-col justify-start items-center bg-black min-h-screen overflow-x-hidden" // Added overflow-x-hidden
+      className="flex flex-col justify-start  bg-black min-h-screen overflow-x-hidden" // Added overflow-x-hidden
     >
       {/* Title Section: Centered */}
+      <div className="flex">
+
       <h1
-        className="text-white text-3xl sm:text-4xl lg:text-5xl font-bold px-4 w-full pt-4 text-center"
-        style={{
-          textShadow: "0 0 5px #fff, 0 0 3px #f39c12, 0 0 1px #f39c12",
-        }}
+       
+       className="text-white text-3xl sm:text-4xl lg:text-5xl mb-6 sm:mb-10 lg:mb-20 font-bold lg:ml-[7rem] ml-[2.8rem]"
+       style={{
+         textShadow: "0 0 5px #fff, 0 0 3px #f39c12, 0 0 1px #f39c12",
+       }}
       >
         Round 3:
       </h1>
+      <h1
+    
+      className="text-white text-3xl sm:text-4xl lg:text-5xl mb-6 sm:mb-10 lg:mb-20 font-bold ml-[2rem]"
+      style={{
+        textShadow: "0 0 5px #fff, 0 0 3px #f39c12, 0 0 1px #f39c12",
+      }}
+      >
+      Syntax Showdown
+      </h1>
+      </div>
 
       {/* Round 3 Section */}
       <div className="w-full flex-grow">

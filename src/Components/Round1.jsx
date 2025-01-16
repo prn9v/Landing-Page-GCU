@@ -6,13 +6,20 @@ import spinningGold from "../assets/SpinningGold.svg";
 
 const Round1 = () => {
   return (
-    <div className=" bg-gradient-to-b  from-black via-black to-emerald-950  p-[2rem] px-[4rem]">
+    <div className=" bg-gradient-to-b  from-black via-black to-teal-950  p-[2rem] px-[4rem]"> 
+    <div className="flex">
+
       <h1
         className="text-white text-3xl sm:text-4xl lg:text-5xl  pl-6   font-bold mb-5 md:mb-5 "
         style={{ textShadow: "0 0 5px #fff, 0 0 3px #f39c12, 0 0 1px #f39c12" }}
       >
         Round 1 :{" "}
       </h1>
+      <h1
+       className="text-white text-3xl sm:text-4xl lg:text-5xl  pl-6   font-bold mb-5 ml-[2rem] md:mb-5 "
+       style={{ textShadow: "0 0 5px #fff, 0 0 3px #f39c12, 0 0 1px #f39c12" }}
+      >The Tech Millionaire</h1>
+    </div>
       <div className="lg:flex lg:gap-7 ">
         <div className=" justify-center  items-center flex text-white lg:w-[60%] ">
           <p className="text-[1.3rem] w-[35rem]">

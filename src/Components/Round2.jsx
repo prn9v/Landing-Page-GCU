@@ -8,16 +8,25 @@ const Round2 = () => {
   return (
     // <div  className="bg-cover bg-center h-screen"
     // style={{ backgroundImage: url(${bg}) }}>
-    <div className="flex flex-col bg-gradient-to-b from-emerald-950 via-50% via-black to-black min-h-screen p-4 sm:p-8 md:p-12 lg:p-16">
+    <div className="flex flex-col bg-gradient-to-b from-teal-950 via-40% via-black to-black min-h-screen p-4 sm:p-8 md:p-12 lg:p-16 ">
       <div className="mb-8 sm:mb-12 lg:mb-20 lg:ml-10">
-      <h1
+        <div className="flex ">
+        <h1
           className="text-white text-3xl sm:text-4xl lg:text-5xl mb-6 sm:mb-10 lg:mb-20 font-bold"
           style={{
             textShadow: "0 0 5px #fff, 0 0 3px #f39c12, 0 0 1px #f39c12",
           }}
         >
-          Round 2 :{" "}
+          Round 2 :
         </h1>
+        <h1
+         className="text-white text-3xl sm:text-4xl lg:text-5xl mb-6 sm:mb-10 lg:mb-20 ml-[3rem] font-bold"
+         style={{
+           textShadow: "0 0 5px #fff, 0 0 3px #f39c12, 0 0 1px #f39c12",
+         }}
+        >The Jungle Escape</h1>
+        </div>
+     
         <div className="text-center mx-4 sm:mx-8 lg:mx-28 p-2 sm:p-4">
           <p className="text-emerald-600 text-base sm:text-lg lg:text-xl">
             Dive into a whirlwind of excitement where every challenge pushes the
@@ -25,7 +34,7 @@ const Round2 = () => {
           </p>
         </div>
       </div>
-      <div className="flex flex-wrap justify-center items-center gap-6 sm:gap-10 lg:gap-14">
+      <div className="flex flex-wrap justify-center items-center gap-6 sm:gap-10 lg:gap-14 mb-[3rem]">
         <div className="maincontianer">
           <div className="thecard">
             <div className="thefront">
