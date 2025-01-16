@@ -3,6 +3,10 @@ import React, { useState, useEffect } from "react";
 const Round3 = () => {
   const [light, setLight] = useState("text-green-500");
   const [animation, setAnimation] = useState(true);
+  const [isHovered1, setIsHovered1] = useState(false);
+  const [isHovered2, setIsHovered2] = useState(false);
+  const [isHovered3, setIsHovered3] = useState(false);
+
 
   useEffect(() => {
     const intervalId = setInterval(() => {
@@ -33,16 +37,42 @@ const Round3 = () => {
       <div className="flex-grow flex flex-col justify-end items-center gap-4 pb-8 w-full sm:w-4/5">
         {/* Add padding between <p> and the title on small screens */}
         <div className="flex flex-col sm:flex-row justify-between sm:justify-evenly items-center gap-4 w-full mt-8 sm:mt-0">
-          <p className="flex items-center justify-center w-40 h-40 sm:w-1/3 sm:h-56 text-center bg-gray-800 text-white rounded-md p-4 shadow-lg">
-            Test your coding speed and focus in this thrilling competition!
-          </p>
-          <p className="flex items-center justify-center w-40 h-40 sm:w-1/3 sm:h-56 text-center bg-gray-800 text-white rounded-md p-4 shadow-lg">
-            Code furiously when the light is green, but freeze instantly when it
-            turns red.
-          </p>
-          <p className="flex items-center justify-center w-40 h-40 sm:w-1/3 sm:h-56 text-center bg-gray-800 text-white rounded-md p-4 shadow-lg">
-            Can you outsmart the clock and emerge victorious?
-          </p>
+        <p
+        className="flex items-center justify-center w-40 h-40 sm:w-1/3 sm:h-56 text-center bg-red-800 text-white rounded-md p-4 transition-all duration-300 hover:bg-green-800 hover:text-white"
+        style={{
+          boxShadow: "0 0 5px rgb(255, 255, 255), 0 0 10px rgb(243, 156, 18), 0 0 15px rgb(243, 156, 18)",
+        }}
+        onMouseEnter={() => setIsHovered1(true)}
+        onMouseLeave={() => setIsHovered1(false)}
+      >
+        {isHovered1
+          ? "Test your coding speed and focus in this thrilling competition!"
+          : "Red Light: Stop!"}
+      </p>
+      <p
+        className="flex items-center justify-center w-40 h-40 sm:w-1/3 sm:h-56 text-center bg-red-800 text-white rounded-md p-4 transition-all duration-300 hover:bg-green-800 hover:text-white"
+        style={{
+          boxShadow: "0 0 5px rgb(255, 255, 255), 0 0 10px rgb(243, 156, 18), 0 0 15px rgb(243, 156, 18)",
+        }}
+        onMouseEnter={() => setIsHovered2(true)}
+        onMouseLeave={() => setIsHovered2(false)}
+      >
+        {isHovered2
+          ? "Code furiously when the light is green, but freeze instantly when it turns red."
+          : "Red Light: Stop!"}
+      </p>
+      <p
+        className="flex items-center justify-center w-40 h-40 sm:w-1/3 sm:h-56 text-center bg-red-800 text-white rounded-md p-4 transition-all duration-300 hover:bg-green-800 hover:text-white"
+        style={{
+          boxShadow: "0 0 5px rgb(255, 255, 255), 0 0 10px rgb(243, 156, 18), 0 0 15px rgb(243, 156, 18)",
+        }}
+        onMouseEnter={() => setIsHovered3(true)}
+        onMouseLeave={() => setIsHovered3(false)}
+      >
+        {isHovered3
+          ? "Can you outsmart the clock and emerge victorious?"
+          : "Red Light: Stop!"}
+      </p>
         </div>
       </div>
     </div>
