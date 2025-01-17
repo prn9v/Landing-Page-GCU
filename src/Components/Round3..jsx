@@ -14,7 +14,7 @@ const Round3 = () => {
       setLight((prevLight) =>
         prevLight === "text-green-500" ? "text-red-500" : "text-green-500"
       );
-    }, 3000);
+    }, 2400);
 
     return () => clearInterval(intervalId);
   }, [animation]);
@@ -30,7 +30,7 @@ const Round3 = () => {
     >
       {/* Title */}
       <h1 className="text-xl sm:text-3xl lg:text-5xl mt-4 px-4 w-full text-center">
-        Red Light - Green Light
+        {light === "text-red-500" ? "STOP!❌" : "GO!✅"}
       </h1>
 
       {/* Content Container: Flex with Centered and Positioned P Tags */}

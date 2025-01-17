@@ -79,6 +79,7 @@ const Round2 = () => {
             </div>
           </div>
         </div>
+       
         <div className="maincontianer">
           <div className="thecard">
             <div className="thefront">
@@ -87,15 +88,15 @@ const Round2 = () => {
                 Round 2.3
               </div>
             </div>
-            <div className="theback">
+            <div className="theback ">
               <img src={back} alt="" />
-              <div class="absolute  bottom-[-4rem] left-[8rem]  transform -translate-x-1/2 -translate-y-1/2 shadow-md">
-                <h1 className="text-yellow-950 text-[1.35rem]  font-bold ">
-                  Wrong Answers Only
+              <div class="absolute bottom-[-3rem]  left-[7.8rem]  transform -translate-x-1/2 -translate-y-1/2 shadow-md">
+                <h1 className="text-yellow-950 text-[1.35rem] font-bold ">
+                  Emoji to Code
                 </h1>
                 <p className="text-yellow-950 mt-4 font-semibold ">
-                  The more ridiculous your response, the closer you are to
-                  winning this brain-bending paradox.
+                  Crack the code hidden in a cryptic string of emojis—where
+                  every symbol has a secret to reveal.
                 </p>
               </div>
             </div>
@@ -113,11 +114,10 @@ const Round2 = () => {
               <img src={back} alt="" />
               <div class="absolute bottom-[-3rem]  left-[7.8rem]  transform -translate-x-1/2 -translate-y-1/2 shadow-md">
                 <h1 className="text-yellow-950 text-[1.35rem] font-bold ">
-                  Emoji to Code
+                  Riddle
                 </h1>
                 <p className="text-yellow-950 mt-4 font-semibold ">
-                  Crack the code hidden in a cryptic string of emojis—where
-                  every symbol has a secret to reveal.
+                Prepare for a battle of brains as we unleash riddles designed to confuse, challenge, and thrill
                 </p>
               </div>
             </div>
